@@ -1,3 +1,43 @@
+/*
+Parking Lot System - Low Level Design Summary
+
+Objective:
+Design a parking lot system that supports multiple floors and vehicle types (BIKE, CAR, TRUCK).
+The system should allow parking, unparking, and viewing current status.
+
+Core Classes:
+1. Vehicle
+   - Represents a vehicle with registration number and type.
+2. ParkingSpot
+   - Represents an individual parking spot with a specific type (BIKE_SPOT, CAR_SPOT, TRUCK_SPOT).
+   - Handles parking and unparking logic.
+3. ParkingFloor
+   - Contains a collection of ParkingSpot objects.
+   - Finds available spots and handles vehicle removal from spots.
+4. ParkingLot
+   - Manages multiple ParkingFloor instances.
+   - Handles high-level operations: park, unpark, getStatus.
+
+Workflow:
+- When a vehicle is to be parked, the system searches each floor for the first available and compatible spot.
+- If a matching spot is found, the vehicle is assigned to it.
+- Unparking is done by searching for the vehicle registration number and freeing the corresponding spot.
+- The current status shows all floors and the status of each spot (occupied or free).
+
+Example:
+- The main function creates a parking lot with 2 floors.
+- Each floor contains 2 bike spots, 2 car spots, and 1 truck spot.
+- Four vehicles are parked, status is printed, one vehicle is unparked, and status is printed again.
+
+Extensibility:
+- Add ticketing and billing systems.
+- Include entry/exit timestamps and price calculations.
+- Support additional vehicle and spot types.
+- Implement REST API or multithreaded access if needed.
+
+This design uses composition and enums to maintain clarity and modularity in an object-oriented manner.
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
